@@ -25,3 +25,12 @@ class Asteroid(CircleShape):
         new_asteroid1.velocity = vector1 * 1.2
         new_asteroid2 = Asteroid(self.position.x, self.position.y, new_radius)
         new_asteroid2.velocity = vector2 * 1.2
+    
+    def get_points(self):
+        if self.radius == ASTEROID_MIN_RADIUS:
+            points = 100
+        elif self.radius > ASTEROID_MIN_RADIUS and self.radius < ASTEROID_MAX_RADIUS:
+            points = 50
+        elif self.radius == ASTEROID_MAX_RADIUS:
+            points = 25
+        return points
